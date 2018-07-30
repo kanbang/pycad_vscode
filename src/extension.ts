@@ -7,6 +7,15 @@ import * as path from "path";
 
 
 function run(cmd: string, args: string[] = [], env = {}, returnStdout = true){
+    let p = cp.spawn(cmd, args);
+
+    p.send('');
+
+    p.on("exit", function() {
+        vscode.window.showInformationMessage('process exits');
+    });
+
+    /*
     cp.execFile(cmd, args, env, (err, stdout, stderr) => {
         try {
             if (err && (<any>err).code === 'ENOENT') {
@@ -26,6 +35,7 @@ function run(cmd: string, args: string[] = [], env = {}, returnStdout = true){
             return 'Internal issues while getting diff from formatted content';
         }
     });
+    */
 }
 
 // this method is called when your extension is activated
@@ -41,19 +51,16 @@ export function activate(context: vscode.ExtensionContext) {
     // The commandId parameter must match the command field in package.json
     let disposable = vscode.commands.registerCommand('extension.sayHello', () => {
         // The code you place here will be executed every time your command is executed
+        let editor = vscode.window.activeTextEditor;
+        let doc = editor.document;
+        let fname = doc.fileName;
+        var cmd = 'C:\\Windows\\notepad.exe';
+        var args = [
+            fname
+        ];
+
         try {
-            var cmd = 'C:\\Windows\\notepad.exe';
-            var fname = '';
-            var currentFile = '';
-        
             // spdev runs expect a log file...
-            var args = [
-                "/SPDEV",
-                "/RUN",
-                currentFile,
-                fname
-            ];
-        
             run(cmd, args);
         } catch (err) {
             console.log(err);
