@@ -11,21 +11,21 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.sayHello"
+        "onCommand:extension.runpycad"
     ],
     "main": "./out/extension",
     "contributes": {
         "commands": [
             {
-                "command": "extension.sayHello",
-                "title": "Hello World"
+                "command": "extension.runpycad",
+                "title": "Run"
             }
         ],
         "menus": {
                 "editor/title": [
                     {
-                        "command": "extension.sayHello",
-                        "when": "editorLangId == typescript",
+                        "command": "extension.runpycad",
+                        "when": "editorLangId == python",
                         "group": "navigation"
                     }
           ]
