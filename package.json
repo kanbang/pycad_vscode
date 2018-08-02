@@ -29,6 +29,29 @@
                         "group": "navigation"
                     }
           ]
+        },
+        "contributes": {
+            "configuration": {
+              "type": "object",
+              "title": "configuration",
+              "properties": {
+                "extension.auto": {
+                  "type": "string",
+                  "enum": [
+                    "off",
+                    "messages",
+                    "verbose"
+                  ],
+                  "default": "off",
+                  "description": "Test enum."
+                },
+                "extension.exepath": {
+                    "type": "string",
+                    "default": "d:\\test.exe",
+                    "description": "pycad path."
+                  }            
+              }
+            }
         }
     },
     "scripts": {

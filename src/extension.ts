@@ -1,9 +1,11 @@
 'use strict';
+
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 import * as cp from 'child_process';
-import * as path from "path";
+
+//import * as path from "path";
 
 
 function run(cmd: string, args: string[] = [], env = {}, returnStdout = true){
@@ -51,12 +53,17 @@ export function activate(context: vscode.ExtensionContext) {
     // The commandId parameter must match the command field in package.json
     let disposable = vscode.commands.registerCommand('extension.runpycad', () => {
         // The code you place here will be executed every time your command is executed
-        let editor = vscode.window.activeTextEditor;
-        let doc = editor.document;
-        let fname = doc.fileName;
-        //var cmd = 'C:\\Windows\\notepad.exe';
+        // let editor = vscode.window.activeTextEditor;
+        // let doc = editor.document;
+        // let fname = doc.fileName;
+        let fname = 'test file';
+        var cmd = 'C:\\Windows\\notepad.exe';
 
-        var cmd = 'J:\\project\\JsCad\\JsCad15\\x64\\Unicode Debug\\test.exe';
+        // let config = vscode.workspace.getConfiguration('pycad');
+        // var cmd = config.get("exepath") as string;
+        // vscode.window.showInformationMessage(cmd);
+
+        //var cmd = 'J:\\project\\JsCad\\JsCad15\\x64\\Unicode Debug\\test.exe';
         var args = [
             fname
         ];
