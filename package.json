@@ -11,48 +11,48 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.runpycad"
+        "onCommand:pycad.runpycad"
     ],
     "main": "./out/extension",
     "contributes": {
         "commands": [
             {
-                "command": "extension.runpycad",
+                "command": "pycad.runpycad",
                 "title": "Run"
             }
         ],
         "menus": {
                 "editor/title": [
                     {
-                        "command": "extension.runpycad",
+                        "command": "pycad.runpycad",
                         "when": "editorLangId == python",
                         "group": "navigation"
                     }
           ]
         },
-        "contributes": {
-            "configuration": {
-              "type": "object",
-              "title": "configuration",
-              "properties": {
-                "extension.auto": {
-                  "type": "string",
-                  "enum": [
-                    "off",
-                    "messages",
-                    "verbose"
-                  ],
-                  "default": "off",
-                  "description": "Test enum."
-                },
-                "extension.exepath": {
-                    "type": "string",
-                    "default": "d:\\test.exe",
-                    "description": "pycad path."
-                  }            
-              }
+
+        "configuration": {
+            "type": "object",
+            "title": "configuration",
+            "properties": {
+            "pycad.auto": {
+                "type": "string",
+                "enum": [
+                "off",
+                "messages",
+                "verbose"
+                ],
+                "default": "off",
+                "description": "Test enum."
+            },
+            "pycad.exepath": {
+                "type": "string",
+                "default": "d:\\test.exe",
+                "description": "pycad path."
+                }            
             }
         }
+        
     },
     "scripts": {
         "vscode:prepublish": "npm run compile",

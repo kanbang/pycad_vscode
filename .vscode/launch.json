@@ -6,9 +6,9 @@
 	"version": "0.2.0",
     "configurations": [
         {
+            "name": "Extension",
             "type": "extensionHost",
             "request": "launch",
-            "name": "启动扩展",
             "runtimeExecutable": "${execPath}",
             "args": [
                 "--extensionDevelopmentPath=${workspaceFolder}"
@@ -16,7 +16,7 @@
             "outFiles": [
                 "${workspaceFolder}/out/**/*.js"
             ],
-            "preLaunchTask": "npm"
+            "preLaunchTask": "npm: watch"
         },
         {
             "name": "Extension Tests",
