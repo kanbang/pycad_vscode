@@ -18,7 +18,7 @@
         "commands": [
             {
                 "command": "pycad.runpycad",
-                "title": "Run"
+                "title": "Run11"
             }
         ],
         "menus": {
@@ -30,7 +30,7 @@
                     }
           ]
         },
-
+    
         "configuration": {
             "type": "object",
             "title": "configuration",
