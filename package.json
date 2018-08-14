@@ -47,7 +47,7 @@
             },
             "pycad.exepath": {
                 "type": "string",
-                "default": "d:\\test.exe",
+                "default": "d:\\test11.exe",
                 "description": "pycad path."
                 }            
             }

@@ -53,11 +53,11 @@ export function activate(context: vscode.ExtensionContext) {
     // The commandId parameter must match the command field in package.json
     let disposable = vscode.commands.registerCommand('pycad.runpycad', () => {
         // The code you place here will be executed every time your command is executed
-        // let editor = vscode.window.activeTextEditor;
-        // let doc = editor.document;
-        // let fname = doc.fileName;
-        let fname = 'test file';
-        var cmd = 'C:\\Windows\\notepad.exe';
+        let editor = vscode.window.activeTextEditor;
+        let doc = editor.document;
+        let fname = doc.fileName;
+        // let fname = 'test file';
+        // var cmd = 'C:\\Windows\\notepad.exe';
 
         let config = vscode.workspace.getConfiguration('pycad');
         var cmd = config.get("exepath") as string;
