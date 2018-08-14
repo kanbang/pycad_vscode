@@ -60,9 +60,9 @@ export function activate(context: vscode.ExtensionContext) {
         let fname = 'test file';
         // var cmd = 'C:\\Windows\\notepad.exe';
 
-        //let settings = vscode.WorkspaceConfiguration;
-        //let settings = vscode.workspace.getConfiguration('exepath');
-        //let cmd = settings.get('exepath', null);
+        let config = vscode.workspace.getConfiguration('pycad');
+        var cmd = config.get("exepath") as string;
+        vscode.window.showInformationMessage(cmd);
 
 
         let config = vscode.workspace.getConfiguration('pycad');
