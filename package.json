@@ -18,7 +18,7 @@
         "commands": [
             {
                 "command": "pycad.runpycad",
-                "title": "Run11"
+                "title": "Run"
             }
         ],
         "menus": {
@@ -27,10 +27,29 @@
                         "command": "pycad.runpycad",
                         "when": "editorLangId == python",
                         "group": "navigation"
+                    },
+                    
+                    {
+                        "command": "pycad.runpycad",
+                        "when": "resourceExtname == .ui",
+                        "group": "navigation"
                     }
           ]
         },
-    
+        "keybindings": [
+            {
+                "command": "pycad.runpycad",
+                "key": "f2",
+                "mac": "f2",
+                "when": "editorLangId == python"
+            },
+            {
+                "command": "pycad.runpycad",
+                "key": "f2",
+                "mac": "f2",
+                "when": "resourceExtname == .ui"
+            }
+        ],
         "configuration": {
             "type": "object",
             "title": "configuration",

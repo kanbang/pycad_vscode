@@ -53,18 +53,25 @@ export function activate(context: vscode.ExtensionContext) {
     // The commandId parameter must match the command field in package.json
     let disposable = vscode.commands.registerCommand('pycad.runpycad', () => {
         // The code you place here will be executed every time your command is executed
-        let editor = vscode.window.activeTextEditor;
-        let doc = editor.document;
+       
+        const editor = vscode.window.activeTextEditor;
+        if (!editor) {
+            return;  // No open text editor
+        }
+
+        const doc = editor.document
         let fname = doc.fileName;
+
         // let fname = 'test file';
-        // var cmd = 'C:\\Windows\\notepad.exe';
 
         let config = vscode.workspace.getConfiguration('pycad');
         let cmd = config.get("exepath") as string;
-        vscode.window.showInformationMessage(cmd);
 
+        vscode.window.showInformationMessage('启动程序：' + cmd);
 
-        //var cmd = 'J:\\project\\JsCad\\JsCad15\\x64\\Unicode Debug\\test.exe';
+        // let cmd = 'J:\\project\\JsCad\\JsCad15\\x64\\Unicode Debug\\test.exe';
+        // let cmd = 'C:\\Windows\\notepad.exe';
+
         var args = [
             fname
         ];
@@ -72,12 +79,14 @@ export function activate(context: vscode.ExtensionContext) {
         try {
             // spdev runs expect a log file...
             run(cmd, args);
+
+            // Display a message box to the user
+            vscode.window.showInformationMessage('已启动...');
         } catch (err) {
             console.log(err);
+            vscode.window.showInformationMessage('启动失败，检查 [ pycad.exepath ] 是否正确配置');
         }
         
-        // Display a message box to the user
-        vscode.window.showInformationMessage('run pycad!');
     });
 
     context.subscriptions.push(disposable);
