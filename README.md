@@ -1,7 +1,5 @@
 # pycad README
 
-This is the README for your extension "pycad". After writing up a brief description, we recommend including the following sections.
-
 ## Features
 
 Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
@@ -22,8 +20,7 @@ For example:
 
 This extension contributes the following settings:
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+* `pycad.exepath`: set to path of pycad
 
 ## Known Issues
 
@@ -34,13 +31,4 @@ Calling out known issues can help limit users opening duplicate issues against y
 Users appreciate release notes as you update your extension.
 
 ### 1.0.0
-
-
 Initial release of pycad
-<<<<<<< .mine
-
-
-=======
-
-
->>>>>>> .theirs
